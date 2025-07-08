@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <!-- Top Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_desc"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_24sdp" />
+
+    <!-- Server Status Text -->
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/server_status_starting"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_16sdp" />
+
+    <!-- Hotspot Info Text -->
+    <TextView
+        android:id="@+id/hotspot_info_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hotspot info will appear here"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/status_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+    <!-- Instructions Scroll -->
+    <ScrollView
+        android:id="@+id/instructions_scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/hotspot_info_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Phone Instructions
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions_title_phone"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions_phone"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="@dimen/_8sdp" /> -->
+
+            <!-- Car Screen Instructions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions_title_car"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="@dimen/_4sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions_car"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- DTC Section Title -->
+    <TextView
+        android:id="@+id/dtc_log_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dtc_log_title"
+        android:textStyle="bold"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/instructions_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp" />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dtcRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/dtc_log_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_dtc"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

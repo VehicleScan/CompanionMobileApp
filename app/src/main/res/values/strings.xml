@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">VehicleScan_Companion</string>
+    <string name="logo_desc">App Logo</string>
+    <string name="server_status_starting">Starting server…</string>
+    <string name="log_contents_default">Log File Contents: None</string>
+
+    <!-- Instructions -->
+    <string name="instructions_title_phone">On your phone:</string>
+    <string name="instructions_phone">
+        • Open Wifi Hotspot (No internet required)
+    </string>
+
+    <string name="instructions_title_car">On your car screen:</string>
+    <string name="instructions_car">1. Open Wifi settings.\n2. Connect to your phone\'s hotspot using name and password above.\n3. Return to the app and check the server status on the phone.\n4. Close the app after finishing to regain access on hotspot."</string>
+
+    <string name="dtc_log_title">DTC Log:</string>
+
+</resources>
